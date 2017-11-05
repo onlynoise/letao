@@ -15,7 +15,7 @@
             <div class="avatar">
                 <img src="./uploads/monkey.png" class="img-circle" alt="">
             </div>
-            <form action="" class="col-xs-offset-1 col-xs-10">
+            <form action="post" class="col-xs-offset-1 col-xs-10">
                 <div class="input-group input-group-lg">
                     <span class="input-group-addon">
                         <i class="fa fa-user"></i>
@@ -38,22 +38,7 @@
 
     <script type="text/javascript">
         
-        $('form').on('submit',function(){
-
-            var _this = $(this);
-            $.ajax({
-                url:'/api/employee/employeeLoyeeLogin',
-                type:'post',
-                data:_this.serialize(),
-                success:function(info){
-                    if(info.error){
-                        return alert(info.message);
-                    }
-                    //成功跳转
-                    location.href = "/";
-                }
-            })
-        })
+        require(['src/login']);
     </script>
 </body>
 </html>
